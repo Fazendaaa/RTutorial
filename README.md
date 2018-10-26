@@ -1,9 +1,9 @@
 # Isa
 ## A fazer
 Comparar os blocos A e B:
-* Os tamasnhos de cada bloco
+* Os tamanhos de cada bloco
 * Criar uma nova coluna com o tamanho total
-* Usar os boxplots de cada bloco
+* Usar os box plots de cada bloco
 * infiltraçãoes e rachaduras
 * Calcular medidas de posição e dispersão:
     * Mediana
@@ -15,7 +15,7 @@ Comparar os blocos A e B:
 * Verificar se infiltrações e rachaduras aparecem mais:
     * [ ] Nos primeiros andares
     * [ ] Nos últimos
-    * [ ] Ou não há relação
+    * [ ] Não há relação
 
 ### Dados
 |  id | Bloco | Andar | Final | Sala | Cozinha | Banheiro | Dorm | Rachadura | Infitr |
@@ -28,7 +28,6 @@ Comparar os blocos A e B:
 ## Rodando
 ### Contruindo o código:
 ```shell
-R -e "devtools::document()"
 R -e "devtools::check()"
 ```
 
@@ -39,7 +38,7 @@ R -e "options(warn=-1);goodpractice::gp('isa')"
 
 ### Rodando testes
 ```shell
-R -e "devtools::test()"
+R -e "devtools::document();devtools::test()"
 ```
 
 ### Rodando o programa
