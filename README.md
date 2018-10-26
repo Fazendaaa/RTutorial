@@ -1,6 +1,6 @@
 # TODO
 Comparar os blocos A e B:
-* Os tamnhos de cada bloco
+* Os tamasnhos de cada bloco
 * Criar uma nova coluna com o tamanho total
 * Usar os boxplots de cada bloco
 * infiltraçãoes e rachaduras
