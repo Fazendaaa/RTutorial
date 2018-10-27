@@ -1,21 +1,3 @@
-#' Calcular Tamanho
-#'
-#' @description
-#' Pega o dados da tabela e cacula com o tamanho de cada bloco em uma nova
-#' coluna
-#'
-#' @author Fazendaaa
-#'
-#' @param dados Data frame para realizar tarefa
-#'
-#' @return Dada frame com os dados calculados
-#'
-#' @keywords internal
-#'
-calcularTamanho <- function(dados) {
-
-}
-
 #' Calcular Total
 #'
 #' @description
@@ -28,13 +10,17 @@ calcularTamanho <- function(dados) {
 #'
 #' @return Dada frame com os dados calculados
 #'
+#' @importFrom dplyr group_by
+#' @importFrom dplyr summarise
+#'
 #' @export
 #'
 calcularTotal <- function(dados) {
-    # porBloco <- calcularTamanho(dados)
-    # total <- calcular as duas colunas por bloco e criar uma nova 
+    total <- dados %>%
+                group_by(Bloco) %>%
+                summarise(total = n())
 
-    # return (total)
+    return (total)
 }
 
 #' Calcular Posição
@@ -46,7 +32,6 @@ calcularTotal <- function(dados) {
 #'     \item 
 #'     \item 
 #'}
-#'
 #'
 #' @author Fazendaaa
 #'
@@ -115,10 +100,19 @@ calcularMedidas <- function(dados) {
 #'
 #' @return Dada frame com os dados calculados
 #'
+#' @importFrom dplyr group_by
+#' @importFrom dplyr filter
+#' @importFrom dplyr summarise
+#'
 #' @keywords internal
 #'
 calcularInfiltracoes <- function(dados) {
+    total <- dados %>%
+                filter(Infiltr == 1) %>%
+                group_by(Bloco) %>%
+                summarise(Infiltr = n())
 
+    return (total)
 }
 
 #' Calcular Rachaduras
@@ -133,10 +127,19 @@ calcularInfiltracoes <- function(dados) {
 #'
 #' @return Dada frame com os dados calculados
 #'
+#' @importFrom dplyr group_by
+#' @importFrom dplyr filter
+#' @importFrom dplyr summarise
+#'
 #' @keywords internal
 #'
 calcularRachaduras <- function(dados) {
+    total <- dados %>%
+                filter(Rachadura == 1) %>%
+                group_by(Bloco) %>%
+                summarise(Rachadura = n())
 
+    return (total)
 }
 
 #' Calcular Ocorrências

@@ -18,7 +18,7 @@ Comparar os blocos A e B:
     * [ ] Não há relação
 
 ### Dados
-|  id | Bloco | Andar | Final | Sala | Cozinha | Banheiro | Dorm | Rachadura | Infitr |
+|  id | Bloco | Andar | Final | Sala | Cozinha | Banheiro | Dorm | Rachadura | Infiltr |
 | --- | ----- | ----- | ----- | ---- | ------- | -------- | ---- | --------- | ------ |
 | 1 | A | 1 | 1 | 28.8 | 7.1 | 5.1 | 12.3 | 0 | 1 |
 | 2 | A | 5 | 2 | 26.1 | 8.2 | 4.9 | 17.2 | 1 | 1 |
@@ -26,12 +26,17 @@ Comparar os blocos A e B:
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
 ## Rodando
-### Contruindo o código:
+```shell
+R -e "devtools::document()"
+```
+
+### Verificações
+#### Desenvolvimento
 ```shell
 R -e "devtools::check()"
 ```
 
-### Verificando padrões
+#### Boas práticas
 ```shell
 R -e "options(warn=-1);goodpractice::gp('isa')"
 ```
@@ -39,11 +44,6 @@ R -e "options(warn=-1);goodpractice::gp('isa')"
 ### Rodando testes
 ```shell
 R -e "devtools::document();devtools::test()"
-```
-
-### Rodando o programa
-```shell
-Rscript ./R/main.R
 ```
 
 ## Notas
@@ -56,6 +56,7 @@ Durante o processo de desenvolvimento a mensagem:
 ```shell
 Picked up _JAVA_OPTIONS
 ```
+
 Sempre aparecia na primeira chamada do pacote `xlsx`. Adicionando as seguintes linhas na minha shell profile resolveram o problema:
 ```shell
 _SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"
@@ -64,6 +65,11 @@ alias java='java "$_SILENT_JAVA_OPTIONS"'
 ```
 
 Graças a [este](https://superuser.com/a/1009779) comentário.
+
+O uso do operador pipe foi devidamente configurado graças ao seguinte comando:
+```shell
+R -e "usethis::use_pipe()"
+```
 
 ### Diretório
 Como arquivos .xlsx não são considerados arquivos válidos para serem utilizados pelo R -- como arquivos "padrões" da linguagem --, ele foi adicionado no [.Rbuildingore](./.Rbuildingore) para evitar que desse um warning durante a verificação.

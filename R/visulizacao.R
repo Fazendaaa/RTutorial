@@ -26,7 +26,7 @@ gerarBoxPlot <- function(dados) {
 #'
 #' @return Box plot
 #'
-#' @external
+#' @export
 #'
 gerarVisualizacao <- function(dados) {
 
