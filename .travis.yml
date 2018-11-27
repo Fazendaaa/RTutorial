@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  docker run -v /home/travis/build/Fazendaaa/RTutorial/:/toBeTested -t fazenda/r-testing /bin/sh -c \
+"cd toBeTested && R -e 'devtools::test()'"
