@@ -21,4 +21,7 @@ Imports:
     xlsx,
     dplyr,
     magrittr,
-    ggplot2
+    ggplot2,
+    Rcpp
+LinkingTo: 
+    Rcpp
