@@ -8,6 +8,7 @@ NULL
 
 tabela <- lerArquivo()
 
+#' Grafico De Andar
 andarGrafico <- function () {
     ggplot(tabela, aes(x = Bloco, y = Andar)) + geom_boxplot()
 }
